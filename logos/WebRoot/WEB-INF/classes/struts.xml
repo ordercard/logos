@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<package name="Struts2" namespace="/" extends="struts-default">
+
+		<action name="registerAction" class="com.act.UserAction"		method="add">
+			<result name="true">/login.jsp</result>
+			<result name="false">/reg.jsp</result>
+		</action>
+
+		<action name="loginAction" class="com.act.loginAction" method="doimage">
+		</action>
+		<action name="login" class="com.act.loginAction" method="vailte">
+
+			<result name="success" type="redirectAction">productfagefenye</result>
+			<result name="error">/login.jsp</result>
+
+		</action>
+		<action name="userinfo" class="com.act.UserAction" method="fix">
+			<result name="success">/user/userinfo.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="update" class="com.act.ProctionAction" method="update">
+			<result name="success">/login.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="product" class="com.act.ProctionAction" method="product">
+			<result name="success">/product.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="Product_productDetailAction" class="com.act.ProctionAction"
+			method="detail">
+			<result name="success">/productDetail.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="productfagefenye" class="com.act.ProctionAction"
+			method="pagefenye">
+			<result name="success">/product.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="xgmm" class="com.act.UserAction" method="xgmm">
+			<result name="success">/login.jsp</result>
+			<result name="error">/index.jsp</result>
+		</action>
+		<action name="xiugai" class="com.act.UserAction" method="xiugai">
+			<result name="success">/user/fixpassword.jsp</result>
+			<result name="error">/login.jsp</result>
+		</action>
+		<action name="userexit" class="com.act.UserAction"
+			method="exit">
+			<result name="success" type="redirect">/login.jsp</result>
+		</action>
+		<action name="Product_productSearchAction" class="com.act.ProctionAction" method="search">
+			<result name="success">/product.jsp</result>
+			<result name="error">/product.jsp</result>
+			</action>
+			<action name="ajax" class="com.act.loginAction" method="checkusernames">
+		</action>
+	</package>
+
+
+
+</struts>
